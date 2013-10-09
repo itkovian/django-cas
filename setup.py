@@ -1,41 +1,28 @@
-#!/usr/bin/env python
+from setuptools import setup, find_packages
 
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+version = '0.8.4'
 
-setup(
-    author='Brodie Rao',
-    author_email='brodie.rao@cpcc.edu',
-    classifiers=[
-        'Development Status :: 5 - Production/Stable',
-        'Environment :: Web Environment',
-        'Intended Audience :: Developers',
-        'Framework :: Django',
-        'License :: OSI Approved :: MIT License',
-        'Natural Language :: English',
-        'Operating System :: OS Independent',
-        'Topic :: Internet :: WWW/HTTP',
-    ],
-    description='CAS 1.0/2.0 authentication backend for Django',
-    download_url='http://django-cas.googlecode.com/files/django_cas-2.0.3.zip',
-    keywords='django cas cas2 authentication middleware backend',
-    license='MIT',
-    long_description="""
-``django_cas`` is a `CAS`_ 1.0 and CAS 2.0 authentication backend for
-`Django`_. It allows you to use Django's built-in authentication mechanisms
-and ``User`` model while adding support for CAS.
-
-It also includes a middleware that intercepts calls to the original login and
-logout pages and forwards them to the CASified versions, and adds CAS support
-to the admin interface.
-
-.. _CAS: http://www.ja-sig.org/products/cas/
-.. _Django: http://www.djangoproject.com/
-""",
-    name='django_cas',
-    packages=['django_cas'],
-    url='http://code.google.com/p/django-cas/',
-    version='2.0.3',
-)
+setup(name='django-cas',
+      version=version,
+      description="Django Cas Client",
+      long_description=open("./README.md", "r").read(),
+      classifiers=[
+          "Development Status :: Development",
+          "Environment :: Console",
+          "Intended Audience :: End Users/Desktop",
+          "Natural Language :: English",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Topic :: Internet :: WWW/HTTP :: Dynamic Content :: CGI Tools/Libraries",
+          "Topic :: Utilities",
+          "License :: OSI Approved :: Private",
+          ],
+      keywords='k-state-common',
+      author='Derek Stegelman, Garrett Pennington',
+      author_email='derekst@k-state.edu, garrett@k-state.edu',
+      url='http://github.com/kstateome/django-cas/',
+      license='MIT',
+      packages=find_packages(),
+      include_package_data=True,
+      zip_safe=True,
+      )
